@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import {
     WriterWrapper,
     WriterTogle,
-    WriterItem
+    WriterItem,
+    ViewAll
 } from '../style';
 
 class Writer extends PureComponent{
@@ -12,7 +13,7 @@ class Writer extends PureComponent{
             <WriterWrapper>
                 <WriterTogle>
                         <span>推荐作者</span>
-                        <a className="page-change">换一批</a>
+                        <a href="###" className="page-change">换一批</a>
                  </WriterTogle>
                 {
                    this.props.list.map((item)=>{
@@ -25,15 +26,16 @@ class Writer extends PureComponent{
                             </div>
                               <img alt='' className="writer-pic" src={item.get('imgUrl')}/>
                               <div className="words">
-                                <a className="name">{item.get('name')}</a>
+                                <a href="###" className="name">{item.get('name')}</a>
                                 <p>{item.get('like')}</p>
                               </div>
                             </div>
+                            
                         </WriterItem>
                        )
                     })
                 }
-               
+                
             </WriterWrapper>
             
         )

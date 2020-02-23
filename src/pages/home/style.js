@@ -188,7 +188,7 @@ export const LoadMore=styled.div`
     text-align:center;
     color: #fff;
     cursor:pointer;
-`
+`;
 export const BackTop=styled.div`
     position:fixed;
     right:100px;
@@ -202,4 +202,15 @@ export const BackTop=styled.div`
     :hover{
         
     }
-`
+`;
+export const ViewAll=styled.div`
+    position: absolute;
+    padding: 7px 7px 7px 12px;
+    left: 0;
+    width: 100%;
+    font-size: 13px;
+    color: #787878;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+`;
