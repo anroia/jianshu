@@ -52,7 +52,7 @@ class Home extends PureComponent{
 }
 
 const mapState=(state)=>({
-    showScroll:state.getIn(['huome','showScroll'])
+    showScroll:state.getIn(['home','showScroll'])
 })
 
 const mapDispatch=(dispatch)=>({

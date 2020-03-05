@@ -38,8 +38,8 @@ class List extends PureComponent{
 }
 
 const mapState=(state)=>({
-    list:state.getIn(['huome','article']),
-    page:state.get(['huome','articlePage'])
+    list:state.getIn(['home','article']),
+    page:state.get(['home','articlePage'])
 });
 const mapDispatch=(dispatch)=>({
     getMoreList(page){

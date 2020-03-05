@@ -9,7 +9,7 @@ const changeHomeData=(result)=>({
     article:result.article,
     RecommenedList:result.RecommenedList,
     RecommenedWriter:result.RecommenedWriter
-})
+});
 
 export const getHomeInfo=()=>{
     return (dispatch)=>{

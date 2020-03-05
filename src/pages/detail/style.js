@@ -12,7 +12,6 @@ export const DetailTitle=styled.div`
 `;
 export const Content=styled.div`
    width:100%;
-   
    p{
     text-indent:25px
     width:80%;

@@ -1,77 +1,78 @@
-import React, {Component} from 'react';
-import axios from 'axios';
+import React, {PureComponent} from 'react';
 import { connect } from 'react-redux';
 import {
     Recommendation,
     RecommenedArea,
     Wrap
 } from './style';
+import { actionCreators } from './store';
 
-class Writer extends Component{
+class Writer extends PureComponent{
+   
     render(){
+        const { WriterList } =this.props;
         return(
-            <Recommendation>
+            <Recommendation> 
                     <img alt='' className="recommened-banner" src="https://cdn2.jianshu.io/assets/web/recommend-author-03cc8798d5cc3f986e49cbcb2eb63079.png"/>
                 <RecommenedArea>
-                    <Line-1>
-                        <Wrap>
-                        <div className="head-pic">
-                                <img alt='' src="https://upload.jianshu.io/users/upload_avatars/14715425/e0668349-8c75-43db-8a9d-c388e5f00d0d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/180/h/180"/>
-                            </div>
-                          <h3>
-                              简书钻首席小管家
-                          </h3>
-                          <p className="description">
-                          愿意为你解答关于简书钻的一切疑问~
-                          买简书...
-                          </p>
-                          <p className="follow">
-                                <span>
-                                    +关注
-                                </span>
-                          </p>
-                          <hr/>
-                          <p className="update">
-                              最近更新
-                          </p>
-                          
-                          <div className="article">
-                              <a className="new" target="_blank" href="###">
-                              心有灵犀---情人节特别活动第六对
-                              </a>
-                              <a className="new" target="_blank" href="###">
-                              心有灵犀---情人节特别活动第七对
-                              </a>
-                              <a className="new" target="_blank" href="###">
-                              心有灵犀---情人节特别活动第八对
-                              </a>
-                          </div>
-                    </Wrap>
-                    </Line-1>
+                    
+                      {   
+                      WriterList.map((item)=>{
+                          return (
+                            <Line-1>
+                            <Wrap key={item}>
+                            <div className="head-pic" >
+                             <img alt='' src={item.get('imgUrl')}/> 
+                             </div>
+                            <h3>{item.get('title')}</h3>
+                             <p className="description">
+                              {item.get('description')}
+                              </p>
+                            <p className="follow">
+                            <span>
+                             +关注
+                            </span>
+                             </p>
+                            <hr/>
+                              <p className="update">
+                               最近更新
+                             </p>
+                            <div className="article">
+                                 <a className="new" target="_blank" href="###">
+                                 {item.get('article1')}
+                                 </ a>
+                                 <a className="new" target="_blank" href="###">
+                                 {item.get('article2')}
+                                 </ a>
+                                 <a className="new" target="_blank" href="###">
+                                 {item.get('article3')}
+                                 </ a>
+                             </div>
+                            </Wrap>
+                            </Line-1>
+                          )
+                      })
+                           
+                        }
                     
                 </RecommenedArea>
             </Recommendation>
         )
     }
     componentDidMount(){
-        axios.get('/api/recommendation.json').then((res)=>{
-            const result=res.data.data;
-            const action={
-                type:'change_recommendation_data',
-                recommendation:result.recommendation
-            }
-            this.props.changeRecommendationData(action);
-        })
+        this.props.changeWriterData();
     }
+    
 }
 
-const mapDispatch=(dispatch)=>({
-    changeRecommendationData(action){
-       dispatch(action);
-    }
-});
 const mapState=(state)=>({
-    list:state.getIn(['writer','WriterList'])
+    WriterList:state.getIn(['writer','WriterList'])
 });
+
+const mapDispatch=(dispatch)=>({
+    changeWriterData(){
+        dispatch(actionCreators.getWriterInfo());
+    }
+})
 
 export default connect(mapState,mapDispatch)(Writer);

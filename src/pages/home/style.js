@@ -6,7 +6,7 @@ export const HomeWrapper=styled.div`
    overflow:hidden;
 `;
 export const HomeLeft=styled.div`
-   with:650px;
+   width:650px;
    margin-left:15px;
    padding-top:30px;
    float:left;
@@ -16,7 +16,7 @@ export const HomeLeft=styled.div`
    }
 `;
 export const HomeRight=styled.div`
-    with:240px;
+    width:280px;
     float:right;
 `;
 export const TopicWrapper=styled.div`
@@ -45,10 +45,8 @@ export const TopicItem=styled.div`
     }
 `;
 export const RecommenedWrapper=styled.div`
-    width:260px;
-    margin-top: 24px;
-    padding-bottom: 4px;
-    min-height: 228px;
+    width:100%;
+    padding-top:23px;
 `;
 export const RecommenedItem=styled.div`
     width: 100%;
@@ -64,7 +62,7 @@ export const RecommenedItem=styled.div`
 export const MobileWrapper=styled.div`
     margin-bottom: 30px;
     padding: 10px 18px;
-    width: 84%;
+    width: 86%;
     border: 1px solid #f0f0f0;
     border-radius: 6px;
     background-color: #fff;
@@ -93,7 +91,7 @@ export const Descriptions=styled.div`
 `;
 export const ListWrapper=styled.div`
     padding:10px 0;
-    width:650px;
+    width:100%;
     border-bottom:1px solid #f0f0f0;
     .list-img{
         width:125px;
@@ -117,7 +115,7 @@ export const ListContent=styled.div`
 `;
 export const WriterWrapper=styled.div`
     width:100%;
-    paddong:10px 0;
+    padding:10px 0;
     p{
         font-size:14px;
     }
@@ -131,6 +129,7 @@ export const WriterWrapper=styled.div`
     
 `;
 export const WriterTogle=styled.div`
+     padding-bottom:20px;
      width:100%;
      span{
          float:left;
@@ -142,26 +141,26 @@ export const WriterTogle=styled.div`
          font-size: 14px;
          color: #969696;
      }
-    margin-bottom:10px;
 `;
 export const WriterItem=styled.div`
-    width:100%;
-    .clear{
-        clear:both;
+    li{
+        list-style:none;
+        margin-left:-40px;
+        margin-bottom:-65px;
     }
+    width:100%;
     .writer-pic{
         float:left;
         width: 45px;
         height: 45px;
         border: 1px solid #ddd;
         border-radius:50%;
-        margin-top:12px;
     }
     .words{
         display:inline-block;
-        line-height:10px;
-        margin-top:15px;
-        a{
+        line-height:7px;
+        margin-top:-17px;
+        .name{
             font-size: 14px;
             color:black;
         }
@@ -170,17 +169,15 @@ export const WriterItem=styled.div`
             color: #969696
         }
     }
-    
     .follow{
         float: right;
-        padding: 0;
         font-size: 13px;
         color: #42c02e;
-        margin-top:15px;
+        margin-right:-38%;
     }
 `;
 export const LoadMore=styled.div`
-    width: 100%;
+    width:90%;
     border-radius: 20px;
     background-color: #a5a5a5;
     padding: 10px 15px;
@@ -188,6 +185,7 @@ export const LoadMore=styled.div`
     text-align:center;
     color: #fff;
     cursor:pointer;
+    margin-top:30px;
 `;
 export const BackTop=styled.div`
     position:fixed;
@@ -203,14 +201,16 @@ export const BackTop=styled.div`
         
     }
 `;
-export const ViewAll=styled.div`
+export const ViewAll=styled.button`
     position: absolute;
     padding: 7px 7px 7px 12px;
-    left: 0;
-    width: 100%;
+    width: 280px;
+    float:right;
     font-size: 13px;
     color: #787878;
     background-color: #f7f7f7;
     border: 1px solid #dcdcdc;
     border-radius: 4px;
+    margin-top:10px;
+    outline:none;
 `;

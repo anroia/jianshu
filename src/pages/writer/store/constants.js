@@ -1,0 +1,1 @@
+export const CHANGE_WRITER_DATA='writer/CHANGE_WRITER_DATA'

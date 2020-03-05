@@ -13,16 +13,15 @@ export const Recommendation=styled.div`
 `;
 export const RecommenedArea=styled.div`
    width:100%;
-   & Line-1{
-       width:100%;
-       display:flex;
-       & Wrap{
-
-       }
-   }
+`;
+export const Line=styled.div`
+   margin--right:20px;
 `;
 export const Wrap=styled.div`
-    height: 320px;
+    display:inline-block;
+    width:25%;
+    height: 400px;
+    margin-left:20px;
     margin-top: 80px;
     padding: 0 26.61px;
     border: 1px solid #e6e6e6;

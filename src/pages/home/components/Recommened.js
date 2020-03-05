@@ -25,7 +25,7 @@ class Recommened extends PureComponent{
 }
 
 const mapState=(state)=>({
-    list:state.getIn(['huome','RecommenedList'])
+    list:state.getIn(['home','RecommenedList'])
 });
 
 export default connect(mapState,null)(Recommened);
